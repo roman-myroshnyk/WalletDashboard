@@ -1,0 +1,40 @@
+name: Deploy to PRODUCTION
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+  
+    - name: Setup yarn 
+      run: |
+        npm install yarn -g
+        yarn config set workspaces-experimental true
+
+    - name: Add AWS credentials 
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.DEFAULT_USER_AWS_ACCESS_KEY_ID }} --profile default
+        aws configure set aws_secret_access_key ${{ secrets.DEFAULT_AWS_SECRET_ACCESS_KEY }} --profile default
+        
+    - name: Install stacks modules
+      run: yarn
+    
+    - name: Install frontend modules
+      run: |
+        cd ./frontend
+        yarn
+        cd ../
+
+    - name: Build and deploy 
+      run: yarn deploy-prod

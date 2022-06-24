@@ -5,7 +5,8 @@
   "scripts": {
     "start": "sst start",
     "build": "sst build",
-    "deploy": "sst deploy --stage=production",
+    "deploy-prod": "AWS_PROFILE=default sst deploy --stage=prod",
+    "deploy-dev": "AWS_PROFILE=default sst deploy --stage=dev",
     "remove": "sst remove",
     "console": "sst console",
     "typecheck": "tsc --noEmit",
