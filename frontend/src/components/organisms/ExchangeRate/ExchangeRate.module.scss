@@ -1,0 +1,40 @@
+@import '@/styles/colors.scss';
+
+.exchangeRate {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  padding: 12px;
+
+  background-color: $darkBlack;
+  border-radius: 10px;
+}
+
+.firstLine {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.secondLine {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  padding: 12px;
+}
+
+.thirdLine {
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+  height: 20px;
+
+  .loadingContainer {
+    color: $blue;
+  }
+}

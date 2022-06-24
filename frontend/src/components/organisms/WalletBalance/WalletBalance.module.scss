@@ -1,0 +1,54 @@
+@import '@/styles/colors.scss';
+
+.walletBalance {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  padding: 12px;
+
+  background-color: $darkBlack;
+  border-radius: 10px;
+}
+
+.firstLine {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  text-align: end;
+}
+
+.secondLine {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+
+  .balanceValueContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 6px 0;
+    padding-left: 40px;
+  }
+
+  .messageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-left: 30px;
+  }
+}
+
+.thirdLine {
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row-reverse;
+  height: 20px;
+
+  .loadingContainer {
+    color: $blue;
+  }
+}
