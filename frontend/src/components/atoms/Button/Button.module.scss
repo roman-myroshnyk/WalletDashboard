@@ -1,0 +1,26 @@
+.button {
+  width: max-content;
+  padding: 15px 25px;
+
+  color: white;
+  font-weight: 600;
+  font-size: 16;
+  letter-spacing: -0.2px;
+  text-align: center;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  border: none;
+  border-radius: 8px;
+  outline: none;
+
+  resize: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  -webkit-touch-callout: none;
+}
+
+.button:disabled {
+  pointer-events: none;
+}

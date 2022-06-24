@@ -1,0 +1,13 @@
+@import '@/styles/colors.scss';
+
+.sectionTitle {
+  margin: 6px;
+
+  color: $gray;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: Epilogue, sans-serif;
+  font-style: normal;
+  line-height: 24px;
+  text-decoration: none;
+}
