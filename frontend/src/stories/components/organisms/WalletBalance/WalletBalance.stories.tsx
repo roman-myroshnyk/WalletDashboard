@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import { Meta, Story } from '@storybook/react/types-6-0';
-import {
-  EnabledCurrencies, CurrencyLables, CurrencyIndexes,
-} from '@/consts/currency';
-import WalletBalance, { IProps } from '@/organisms/WalletBalance';
+import { CurrencyLables} from '@/consts/currency';
+import WalletBalance from '@/organisms/WalletBalance';
 
 export default {
   title: 'organisms/WalletBalance',
@@ -31,22 +29,14 @@ export default {
   },
 } as Meta;
 
-interface ITemplate extends IProps {
+interface ITemplate {
   currency: CurrencyLables;
 }
-const Template:Story<ITemplate> = ({ currency, ...args }) => {
-  const currencyInfo = EnabledCurrencies[CurrencyIndexes[currency]];
+const Template:Story<ITemplate> = () => {
   return (
-    <WalletBalance {...args} currencyInfo={currencyInfo} />
+    <WalletBalance  />
   );
 };
 
 export const Default = Template.bind({});
 
-Default.args = {
-  balance: 30,
-  currency: CurrencyLables.USD,
-  currencyExchangeRateUnset: false,
-  disabled: false,
-  loading: false,
-};

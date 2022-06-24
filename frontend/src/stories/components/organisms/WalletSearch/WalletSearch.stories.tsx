@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import WalletSearch, { IProps } from '@/organisms/WalletSearch';
+import WalletSearch from '@/organisms/WalletSearch';
 
 export default {
   title: 'organisms/WalletSearch',
@@ -23,7 +23,7 @@ export default {
   },
 } as Meta;
 
-const Template:Story<IProps> = (args) => (
+const Template:Story = (args) => (
   <WalletSearch {...args} />
 );
 

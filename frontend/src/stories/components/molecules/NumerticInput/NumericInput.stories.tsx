@@ -6,7 +6,7 @@ export default {
   component: NumericInput,
   argTypes: {
     value: {
-      controls: 'text',
+      controls: 'number',
     },
     id: {
       controls: 'text',
@@ -30,7 +30,7 @@ const Template:Story<IProps> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  value: '',
+  value: null,
   id: '',
   disabled: false,
 };
