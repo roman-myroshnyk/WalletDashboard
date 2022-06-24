@@ -24,7 +24,7 @@ jobs:
 
     - name: Add AWS credentials 
       run: |
-        aws configure set aws_access_key_id ${{ secrets.DEFAULT_USER_AWS_ACCESS_KEY_ID }} --profile default
+        aws configure set aws_access_key_id ${{ secrets.DEFAULT_AWS_ACCESS_KEY_ID }} --profile default
         aws configure set aws_secret_access_key ${{ secrets.DEFAULT_AWS_SECRET_ACCESS_KEY }} --profile default
         
     - name: Install stacks modules
