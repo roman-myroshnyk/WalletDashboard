@@ -1,0 +1,25 @@
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100%;
+}
+
+.staleWrapper {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  width: 94px;
+}
+
+.editingWrapper {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
