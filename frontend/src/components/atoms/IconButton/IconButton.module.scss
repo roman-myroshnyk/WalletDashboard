@@ -1,0 +1,18 @@
+@import '@/styles/colors.scss';
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+
+  color: $gray;
+
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+}
+
+.iconButton:disabled {
+  color: $darkGray;
+}
