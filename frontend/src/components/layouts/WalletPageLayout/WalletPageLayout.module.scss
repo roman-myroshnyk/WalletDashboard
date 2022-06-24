@@ -1,0 +1,66 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties */
+@import '@/styles/mixins.scss';
+
+.walletPageLayout {
+  display: grid;
+  grid-template-areas:
+    'walletSearch'
+    'warning'
+    'exchangeRate'
+    'walletBalance';
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 100%;
+  gap: 0 0;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  padding-top: 28px;
+
+  @include media-breakpoint-up(sm) {
+    grid-template-areas:
+      'walletSearch walletSearch'
+      'warning warning'
+      'exchangeRate walletBalance';
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 50% 50%;
+    padding: 38px;
+    padding-top: 40px;
+  }
+}
+
+.walletSearch {
+  grid-area: walletSearch;
+  padding: 14px 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 18px 0;
+  }
+}
+
+.warning {
+  grid-area: warning;
+  padding: 14px 0 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 18px 0 0;
+  }
+}
+
+.exchangeRate {
+  grid-area: exchangeRate;
+  padding: 0 0 14px;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0 18px 18px 0;
+  }
+}
+
+.walletBalance {
+  grid-area: walletBalance;
+  padding: 0 0 14px;
+
+  @include media-breakpoint-up(sm) {
+    padding: 0 0 18px 18px;
+  }
+}
