@@ -1,0 +1,24 @@
+{
+    "customSyntax":"postcss-scss",
+    "plugins": [
+      "stylelint-order",
+      "stylelint-config-rational-order/plugin"
+    ], 
+    "extends": [
+      "stylelint-config-standard", 
+      "stylelint-config-rational-order"
+    ], 
+    "rules": {
+      "string-quotes": "single",
+      "declaration-empty-line-before":null,
+      "plugin/rational-order": [true, {
+        "border-in-box-model": false,
+        "empty-line-between-groups": true
+      }],
+      "at-rule-no-unknown": [
+        true,
+        {"ignoreAtRules": ["include","mixin","each","else","if"]}],
+      "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$"
+    },
+    "ignoreFiles": ["**/node_modules/**"] 
+}

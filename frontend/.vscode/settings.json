@@ -1,0 +1,12 @@
+{
+    "git.autofetch": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "eslint.format.enable": true,
+    "stylelint.validate": ["css", "scss"],
+    "scss.validate": false,
+    "css.validate": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+}

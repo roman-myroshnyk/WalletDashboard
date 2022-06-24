@@ -1,0 +1,48 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "target": "es5",
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+      "strictBindCallApply": true,
+      "allowJs": true,
+      "skipLibCheck": true,
+      "strict": false,
+      "forceConsistentCasingInFileNames": true,
+      "noEmit": true,
+      "incremental": true,
+      "esModuleInterop": true,
+      "module": "esnext",
+      "keyofStringsOnly": true,
+      "resolveJsonModule": true,
+      "moduleResolution": "node",
+      "isolatedModules": true,
+      "jsx": "preserve",
+      "paths": {
+        "@/app/*":["src/app/*"],
+        "@/api/*":["src/api/*"],
+        "@/animations/*":["src/animations/*"],
+        "@/hooks/*":["src/hooks/*"],
+        "@/icons/*":["src/components/icons/*"],
+        "@/atoms/*":["src/components/atoms/*"],
+        "@/molecules/*":["src/components/molecules/*"],
+        "@/organisms/*":["src/components/organisms/*"],
+        "@/layouts/*":["src/components/layouts/*"],
+        "@/stories/*":["src/stories/*"],
+        "@/consts/*":["src/consts/*"],
+        "@/styles/*":["src/styles/*"]
+      }
+    },
+    "include": [
+      "next-env.d.ts",
+      "**/*.ts",
+      "**/*.tsx"
+, "lib/framer/Select.tsx", "lib/framer/default-utils/index.js"    ],
+    "exclude": [
+      "node_modules"
+    ]
+  }
+  
