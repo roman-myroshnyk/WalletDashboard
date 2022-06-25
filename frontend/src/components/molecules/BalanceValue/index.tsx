@@ -15,7 +15,7 @@ const BalanceValue:FC<IProps> = ({ value, currencySymbol }) => {
       <animated.span>
         {animatedValue.to((val) => (val.toFixed(2)))}
       </animated.span>
-      {` ${currencySymbol}`}
+      {` ${currencySymbol || ''}`}
     </strong>
   );
 };

@@ -10,7 +10,7 @@ export interface WalletState {
     walletAddress: string;
 }
 const initialState: WalletState = {
-  balance: 2,
+  balance: 0,
   isOld: null,
   walletAddress: '',
 };
@@ -61,10 +61,10 @@ export const selectWallet = (state:AppState) => state.wallet;
 
 export default walletSlice.reducer;
 
-const initWallet = (walletAddress:string, currency:CurrencyLables):AppThunk => async (dispatch) => {
+const initWallet = (walletAddress:string, currency:CurrencyLables):AppThunk => (dispatch) => {
   dispatch(updateWalletAddress({ address: walletAddress }));
-  await dispatch(getWalletAge({ walletAddress }));
-  await dispatch(getWalletBalance({
+  void dispatch(getWalletAge({ walletAddress }));
+  void dispatch(getWalletBalance({
     walletAddress,
     currency,
     digitalCurrency: DigitalCurrencyLabels.ETH,

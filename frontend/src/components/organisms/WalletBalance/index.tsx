@@ -50,7 +50,7 @@ const WalletBalance:FC = () => {
           </Label>
         </div>
         )}
-        {rate && balance && (
+        {rate && (
         <div className={styles.balanceValueContainer}>
           <BalanceValue
             value={balance}
