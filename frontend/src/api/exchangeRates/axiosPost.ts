@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+// interfaces
 import { SuccessResponse, FailResponse, IPostBody } from '@/api/exchangeRates/post';
 
 export type PostExchangeRatesParams = IPostBody;

@@ -1,4 +1,25 @@
 {
   "extends": "@tsconfig/node16/tsconfig.json",
-  "include": ["stacks"]
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@/app/*":["frontend/src/app/*"],
+      "@/api/*":["frontend/src/api/*"],
+      "@/database/*":["frontend/src/database/*"],
+      "@/animations/*":["frontend/src/animations/*"],
+      "@/hooks/*":["frontend/src/hooks/*"],
+      "@/icons/*":["frontend/src/components/icons/*"],
+      "@/atoms/*":["frontend/src/components/atoms/*"],
+      "@/molecules/*":["frontend/src/components/molecules/*"],
+      "@/organisms/*":["frontend/src/components/organisms/*"],
+      "@/layouts/*":["frontend/src/components/layouts/*"],
+      "@/stories/*":["frontend/src/stories/*"],
+      "@/consts/*":["frontend/src/consts/*"],
+      "@/styles/*":["frontend/src/styles/*"]
+    },  
+  },
+  "include": [
+    "stacks",
+    "frontend"
+  ]
 }

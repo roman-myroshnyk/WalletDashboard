@@ -10,7 +10,8 @@
     "remove": "sst remove",
     "console": "sst console",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "lint": "yarn lint"
   },
   "devDependencies": {
     "@serverless-stack/cli": "^1.2.25",

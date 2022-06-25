@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+// interfaces
 import { SuccessResponse, FailResponse, IPutBody } from '@/api/exchangeRates/put';
 
 export type PutExchangeRatesParams = IPutBody

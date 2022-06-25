@@ -1,11 +1,10 @@
-import AWS from 'aws-sdk';
-
+// database
+import { get as dbGetExchangeRate } from '@/database/exchangeRate/get';
+// interfaces
 import { CurrencyLables, DigitalCurrencyLabels } from '@/consts/currency';
 import { IRequest, IResponse } from '@/api/common';
-
-const dynamoDb = new AWS.DynamoDB.DocumentClient({
-  region: process.env.REGION,
-});
+// utils
+import { validateGetParams } from '@/api/exchangeRates/validators';
 
 export interface IGetQuery {
     [key: string]: string;
@@ -17,8 +16,6 @@ export type IGetRequest = IRequest<'GET', IGetQuery, null>;
 
 export type SuccessResponse = {
     status: 'OK',
-    digitalCurrency: DigitalCurrencyLabels,
-    currency: CurrencyLables,
     rate: number,
 }
 
@@ -26,38 +23,18 @@ export type FailResponse = {
     status: 'FAILED TO GET',
     message: string
 }
+
 export async function get(req:IGetRequest, res:IResponse) {
   try {
     const { digitalCurrency, currency } = req.query;
-    // TODO create validate helper for params
-    if (!digitalCurrency) {
-      throw new Error('digital currency not specified');
-    }
-    if (!(digitalCurrency in DigitalCurrencyLabels)) {
-      throw new Error('unknown digiral currency');
-    }
-    if (!currency) {
-      throw new Error('currency not specified');
-    }
-    if (!(currency in CurrencyLables)) {
-      throw new Error('unkown currency');
-    }
 
-    const getParams = {
-      TableName: process.env.TABLE_NAME,
-      Key: {
-        PK: `exchangeRates#${digitalCurrency}#${currency}`,
-        SK: '1',
-      },
-    };
-    const response = await dynamoDb.get(getParams).promise();
-    const rate = response.Item ? response.Item.rate as number : null;
+    validateGetParams(digitalCurrency, currency);
+
+    const rate = await dbGetExchangeRate(currency, digitalCurrency);
 
     const successResponse:SuccessResponse = {
       status: 'OK',
-      digitalCurrency,
-      currency,
-      rate: Number(rate),
+      rate,
     };
 
     res.status(200).json(successResponse);
