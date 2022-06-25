@@ -92,9 +92,9 @@ export const exchangeRateSlice = createSlice({
 export const selectExchangeRate = (state:AppState) => state.exchangeRate;
 export default exchangeRateSlice.reducer;
 
-export const initExchangeRate = ():AppThunk => async (dispatch, getState) => {
+export const initExchangeRate = ():AppThunk => (dispatch, getState) => {
   const { selectedCurrency } = selectExchangeRate(getState());
-  await dispatch(getExchangeRate({
+  void dispatch(getExchangeRate({
     currency: selectedCurrency.label,
     digitalCurrency: DigitalCurrencyLabels.ETH,
   }));
@@ -122,14 +122,14 @@ const updateExchangeRate = ():AppThunk => async (dispatch, getState) => {
   );
 };
 
-const changeCurrency = (currencyIndex:number):AppThunk => async (dispatch, getState) => {
+const changeCurrency = (currencyIndex:number):AppThunk => (dispatch, getState) => {
   const currencyLabel = EnabledCurrencies[currencyIndex].label;
   const wallet = selectWallet(getState());
-  await dispatch(getExchangeRate({
+  void dispatch(getExchangeRate({
     currency: currencyLabel,
     digitalCurrency: DigitalCurrencyLabels.ETH,
   }));
-  await dispatch(
+  void dispatch(
     walletActions.getWalletBalance({
       walletAddress: wallet.walletAddress,
       currency: currencyLabel,
