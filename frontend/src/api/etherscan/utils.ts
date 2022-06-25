@@ -1,4 +1,4 @@
-import { toChecksumAddress } from 'ethereumjs-util';
+import { toChecksumAddress, isValidAddress as isValidAddressUtil } from 'ethereumjs-util';
 
 export function validateChecksum(
   walletAddress:string,
@@ -9,6 +9,12 @@ export function validateChecksum(
     throw new Error('EHERSCAN:checksum: Invalid wallet addresss');
   }
   return checksumAddress;
+}
+
+export function isValidAddress(
+  walletAddress: string,
+) {
+  return isValidAddressUtil(walletAddress);
 }
 
 const FLOAT_POINT_FIX = 1000000000000000000;

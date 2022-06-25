@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { NextPage, GetServerSideProps } from 'next';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -13,7 +13,7 @@ import {
   selectWallet,
   walletActions,
 } from '@/app/walletSlice';
-import { validateChecksum } from '@/api/etherscan/utils';
+import { validateChecksum, isValidAddress } from '@/api/etherscan/utils';
 import {
   selectExchangeRate,
   exchangeRateActions,
@@ -21,24 +21,39 @@ import {
 
 import styles from '@/styles/Page.module.scss';
 
+// eslint-disable-next-line @typescript-eslint/require-await
+export const getServerSideProps:GetServerSideProps = async (context) => {
+  try {
+    const { walletAddress } = context.query;
+    isValidAddress(walletAddress as string);
+    const checksumAddress = validateChecksum(walletAddress as string);
+    if (checksumAddress !== walletAddress) {
+      context.res.setHeader('location', `/wallet/${checksumAddress}`);
+      context.res.statusCode = 302;
+      context.res.end();
+    }
+  } catch (e) {
+    context.res.setHeader('location', '/');
+    context.res.statusCode = 302;
+    context.res.end();
+  }
+  return {
+    props: {}, // will be passed to the page component as props
+  };
+};
 const WalletPage:NextPage = () => {
   const router = useRouter();
   const { walletAddress } = router.query;
   const dispatch = useAppDispatch();
   const { selectedCurrency } = useAppSelector(selectExchangeRate);
   useEffect(() => {
-    try {
-      const checksumAddress = validateChecksum(walletAddress as string);
-
-      dispatch(walletActions.initWallet(checksumAddress, selectedCurrency.label));
-    } catch (e) {
-      // TODO redirect to error page;
-      void router.push('/');
-    }
-  }, [dispatch, router, selectedCurrency, walletAddress]);
+    dispatch(walletActions.initWallet(walletAddress as string, selectedCurrency.label));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     dispatch(exchangeRateActions.initExchangeRate());
-  }, [dispatch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const wallet = useAppSelector(selectWallet);
   return (

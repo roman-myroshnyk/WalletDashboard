@@ -5,18 +5,17 @@ export async function get(
 ):Promise<number> {
   try {
     const transactionsResponse = await etherscanApi.account.txlist(checksumAddress, 0, 'latest', 1, 1, 'desc');
+    const lastTransaction = transactionsResponse.result[0];
 
-    const lastTranscaction = transactionsResponse.result[0];
-
-    if (!lastTranscaction) {
+    if (!lastTransaction) {
       throw new Error('ETHERSCAN:lastTransactionTime: wallet has no transactions');
     }
 
-    const lastTransactionTimestamp = Number(lastTranscaction.timeStamp);
+    const lastTransactionTimestamp = Number(lastTransaction.timeStamp);
     return lastTransactionTimestamp;
   } catch (e) {
     const error = <Error>e;
-    if (error.message.startsWith('ETHERSCAN')) {
+    if (error.message && error.message.startsWith('ETHERSCAN')) {
       throw e;
     } else {
       throw new Error('ETHERSCAN:lastTransactionTime: failed to get last transaction');
