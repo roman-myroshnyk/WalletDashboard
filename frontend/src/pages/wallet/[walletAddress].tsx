@@ -38,9 +38,10 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
     context.res.end();
   }
   return {
-    props: {}, // will be passed to the page component as props
+    props: {},
   };
 };
+
 const WalletPage:NextPage = () => {
   const router = useRouter();
   const { walletAddress } = router.query;

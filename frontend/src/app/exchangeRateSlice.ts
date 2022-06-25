@@ -122,20 +122,22 @@ const updateExchangeRate = ():AppThunk => async (dispatch, getState) => {
   );
 };
 
-const changeCurrency = (currencyIndex:number):AppThunk => (dispatch, getState) => {
+const changeCurrency = (currencyIndex:number):AppThunk => async (dispatch, getState) => {
   const currencyLabel = EnabledCurrencies[currencyIndex].label;
   const wallet = selectWallet(getState());
-  void dispatch(getExchangeRate({
-    currency: currencyLabel,
-    digitalCurrency: DigitalCurrencyLabels.ETH,
-  }));
-  void dispatch(
-    walletActions.getWalletBalance({
-      walletAddress: wallet.walletAddress,
+  await Promise.all([
+    dispatch(getExchangeRate({
       currency: currencyLabel,
       digitalCurrency: DigitalCurrencyLabels.ETH,
-    }),
-  );
+    })),
+    dispatch(
+      walletActions.getWalletBalance({
+        walletAddress: wallet.walletAddress,
+        currency: currencyLabel,
+        digitalCurrency: DigitalCurrencyLabels.ETH,
+      }),
+    ),
+  ]);
   dispatch(exchangeRateSlice.actions.updateCurrency({ currencyIndex }));
 };
 

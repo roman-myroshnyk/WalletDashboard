@@ -6,6 +6,7 @@ import styles from './IconButton.module.scss';
 export interface IProps {
   isShown: boolean;
   disabled: boolean;
+  label: string;
   onClick: () => void;
   children:ReactNode;
 }
@@ -33,12 +34,13 @@ const variants = {
 };
 
 const IconButton:FC<IProps> = ({
-  isShown, disabled, onClick, children,
+  isShown, disabled, label, onClick, children,
 }) => (
   <div>
     <AnimatePresence exitBeforeEnter>
       {isShown && (
       <motion.button
+        area-label={label}
         onClick={onClick}
         disabled={disabled}
         className={styles.iconButton}
