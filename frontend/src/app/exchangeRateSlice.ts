@@ -122,7 +122,7 @@ const updateExchangeRate = ():AppThunk => async (dispatch, getState) => {
   );
 };
 
-const changeCurrency = (currencyIndex:number):AppThunk => async (dispatch, getState) => {
+const changeCurrency = (currencyIndex:number):AppThunk => (dispatch, getState) => {
   const currencyLabel = EnabledCurrencies[currencyIndex].label;
   const wallet = selectWallet(getState());
   void dispatch(getExchangeRate({
