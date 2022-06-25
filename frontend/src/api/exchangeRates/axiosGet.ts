@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
+// interfaces
 import { SuccessResponse, FailResponse, IGetQuery } from '@/api/exchangeRates/get';
 
 export type GetExchangeRatesParams = IGetQuery;

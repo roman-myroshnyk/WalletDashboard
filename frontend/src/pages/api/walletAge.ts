@@ -1,4 +1,6 @@
+// handlers
 import { get, IGetRequest } from '@/api/walletAge/get';
+// interfaces
 import { IResponse } from '@/api/common';
 
 export type IHandler = IGetRequest;

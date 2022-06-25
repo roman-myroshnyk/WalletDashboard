@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Web3 from 'web3';
 
 import Head from 'next/head';
 import WalletPageLayout from '@/layouts/WalletPageLayout';
@@ -14,15 +13,13 @@ import {
   selectWallet,
   walletActions,
 } from '@/app/walletSlice';
+import { validateChecksum } from '@/api/etherscan/utils';
 import {
   selectExchangeRate,
   exchangeRateActions,
 } from '@/app/exchangeRateSlice';
 
 import styles from '@/styles/Page.module.scss';
-
-// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-const web3 = new Web3(Web3.givenProvider);
 
 const WalletPage:NextPage = () => {
   const router = useRouter();
@@ -31,10 +28,9 @@ const WalletPage:NextPage = () => {
   const { selectedCurrency } = useAppSelector(selectExchangeRate);
   useEffect(() => {
     try {
-      const address = String(walletAddress);
-      web3.utils.toChecksumAddress(address);
+      const checksumAddress = validateChecksum(walletAddress as string);
 
-      dispatch(walletActions.initWallet(address, selectedCurrency.label));
+      dispatch(walletActions.initWallet(checksumAddress, selectedCurrency.label));
     } catch (e) {
       // TODO redirect to error page;
       void router.push('/');

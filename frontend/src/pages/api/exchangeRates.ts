@@ -1,6 +1,8 @@
+// handlers
 import { get, IGetRequest } from '@/api/exchangeRates/get';
 import { put, IPutRequest } from '@/api/exchangeRates/put';
 import { post, IPostRequest } from '@/api/exchangeRates/post';
+// interface
 import { IResponse } from '@/api/common';
 
 export type IHandler = IGetRequest | IPutRequest | IPostRequest;

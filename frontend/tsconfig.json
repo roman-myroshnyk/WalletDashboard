@@ -24,6 +24,7 @@
       "paths": {
         "@/app/*":["src/app/*"],
         "@/api/*":["src/api/*"],
+        "@/database/*":["src/database/*"],
         "@/animations/*":["src/animations/*"],
         "@/hooks/*":["src/hooks/*"],
         "@/icons/*":["src/components/icons/*"],

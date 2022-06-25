@@ -1,11 +1,10 @@
-import AWS from 'aws-sdk';
-
+// database
+import { update as dbUpdateExchangeRate } from '@/database/exchangeRate/update';
+// interfaces
 import { CurrencyLables, DigitalCurrencyLabels } from '@/consts/currency';
 import { IRequest, IResponse } from '@/api/common';
-
-const dynamoDb = new AWS.DynamoDB.DocumentClient({
-  region: process.env.REGION,
-});
+// utils
+import { validateUpdateParams } from '@/api/exchangeRates/validators';
 
 export interface IPutBody {
     digitalCurrency: DigitalCurrencyLabels;
@@ -17,8 +16,6 @@ export type IPutRequest = IRequest<'PUT', null, IPutBody>;
 
 export type SuccessResponse = {
     status: 'OK',
-    digitalCurrency:DigitalCurrencyLabels,
-    currency: CurrencyLables,
     rate:number,
 }
 
@@ -30,38 +27,14 @@ export type FailResponse = {
 export async function put(req:IPutRequest, res:IResponse) {
   try {
     const { digitalCurrency, currency, newRate } = req.body;
-    if (!digitalCurrency) {
-      throw new Error('digital currency not specified');
-    }
-    if (!(digitalCurrency in DigitalCurrencyLabels)) {
-      throw new Error('unknown digiral currency');
-    }
-    if (!currency) {
-      throw new Error('currency not specified');
-    }
-    if (!(currency in CurrencyLables)) {
-      throw new Error('unkown currency');
-    }
-    const newRateFixed = newRate.toFixed(2);
-    if (Number.isNaN(newRateFixed)) {
-      throw new Error('new rate is not number');
-    }
 
-    const putParams = {
-      TableName: process.env.TABLE_NAME,
-      Item: {
-        PK: `exchangeRates#${digitalCurrency}#${currency}`,
-        SK: '1',
-        rate: newRate,
-      },
-    };
+    const rate = validateUpdateParams(digitalCurrency, currency, newRate);
 
-    await dynamoDb.put(putParams).promise();
+    await dbUpdateExchangeRate(digitalCurrency, currency, rate);
+
     const successResponse:SuccessResponse = {
       status: 'OK',
-      digitalCurrency,
-      currency,
-      rate: Number(newRate),
+      rate,
     };
 
     res.status(200).json(successResponse);
