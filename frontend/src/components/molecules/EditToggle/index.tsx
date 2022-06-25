@@ -22,6 +22,7 @@ const EditToggle:FC<IProps> = ({
   <div className={styles.wrapper}>
     <div className={styles.staleWrapper}>
       <IconButton
+        label="edit"
         isShown={!isEditing}
         disabled={disabled}
         onClick={onEdit}
@@ -34,6 +35,7 @@ const EditToggle:FC<IProps> = ({
     </div>
     <div className={styles.editingWrapper}>
       <IconButton
+        label="confirm"
         isShown={isEditing}
         disabled={disabled}
         onClick={onConfirm}
@@ -44,6 +46,7 @@ const EditToggle:FC<IProps> = ({
         />
       </IconButton>
       <IconButton
+        label="cancel"
         isShown={isEditing}
         disabled={disabled}
         onClick={onCancel}
