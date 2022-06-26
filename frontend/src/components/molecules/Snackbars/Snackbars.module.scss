@@ -1,0 +1,44 @@
+@import '@/styles/colors.scss';
+
+.container {
+  display: flex;
+
+  pointer-events: none;
+}
+
+.ul {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.addButton {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+
+  font-size: 28px;
+
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+
+  appearance: none;
+  pointer-events: auto;
+}

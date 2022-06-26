@@ -1,7 +1,9 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { AppState, AppThunk } from '@/app/store';
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
+// api
 import { axiosGetWalletAge, GetWalletAgeParams } from '@/api/walletAge/axiosGet';
 import { axiosGetWalletBalance, GetWalletBalanceParams } from '@/api/walletBalance/axiosGet';
+// interfaces
 import { CurrencyLables, DigitalCurrencyLabels } from '@/consts/currency';
 
 export interface WalletState {
@@ -9,6 +11,7 @@ export interface WalletState {
     isOld?: boolean;
     walletAddress: string;
 }
+
 const initialState: WalletState = {
   balance: 0,
   isOld: null,
@@ -44,14 +47,8 @@ export const walletSlice = createSlice({
       .addCase(getWalletAge.fulfilled, (state, action) => {
         state.isOld = action.payload.isOld;
       })
-      .addCase(getWalletAge.rejected, () => {
-        // TODO error handling
-      })
       .addCase(getWalletBalance.fulfilled, (state, action) => {
         state.balance = action.payload.balance;
-      })
-      .addCase(getWalletBalance.rejected, () => {
-        // TODO error handling
       });
   },
 });
