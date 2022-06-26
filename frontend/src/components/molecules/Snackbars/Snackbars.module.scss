@@ -20,25 +20,3 @@
   margin: 0;
   padding: 0;
 }
-
-.addButton {
-  position: fixed;
-  bottom: 10px;
-  left: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-
-  font-size: 28px;
-
-  border: none;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-
-  appearance: none;
-  pointer-events: auto;
-}

@@ -1,9 +1,11 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import Header from '@/atoms/Header';
 import { Provider } from 'react-redux';
 import '@/styles/globals.scss';
 import Snackbars from '@/molecules/Snackbars';
 import store from '@/app/store';
+import Title from '@/atoms/Title';
 
 const MyApp = ({ Component, pageProps }:AppProps) => (
   <Provider store={store}>
@@ -33,6 +35,11 @@ const MyApp = ({ Component, pageProps }:AppProps) => (
       <link rel="apple-touch-icon" href="/apple-icon.png" />
       <meta name="theme-color" content="#317EFB" />
     </Head>
+    <Header>
+      <Title>
+        Digital Wallet Dashboard
+      </Title>
+    </Header>
     <Component {...pageProps} />
     <Snackbars />
   </Provider>

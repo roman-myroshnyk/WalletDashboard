@@ -11,13 +11,11 @@ import styles from './Snackbar.module.scss';
 interface IProps {
     onClose: () => void;
     message: string;
-    snackbarKey:string;
 }
 
 const Snackbar:FC<IProps> = ({
   message,
   onClose,
-  snackbarKey,
 }) => (
   <motion.li
     className={styles.li}
@@ -29,7 +27,6 @@ const Snackbar:FC<IProps> = ({
     </span>
     <span className={styles.text}>
       {message}
-      {snackbarKey}
     </span>
     <IconButton
       label="cancel"
