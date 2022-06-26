@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { AppProps } from 'next/app';
+import { AnimatePresence } from 'framer-motion';
 import Head from 'next/head';
 import Header from '@/atoms/Header';
 import { Provider } from 'react-redux';
@@ -40,7 +42,9 @@ const MyApp = ({ Component, pageProps }:AppProps) => (
         Digital Wallet Dashboard
       </Title>
     </Header>
-    <Component {...pageProps} />
+    <AnimatePresence initial>
+      <Component {...pageProps} />
+    </AnimatePresence>
     <Snackbars />
   </Provider>
 );

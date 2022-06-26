@@ -5,10 +5,11 @@
   display: grid;
   grid-template-areas:
     'walletSearch'
+    'walletAddres'
     'warning'
     'exchangeRate'
     'walletBalance';
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
   grid-template-columns: 100%;
   gap: 0 0;
   justify-content: space-around;
@@ -20,9 +21,10 @@
   @include media-breakpoint-up(sm) {
     grid-template-areas:
       'walletSearch walletSearch'
+      'walletAddress walletAddress'
       'warning warning'
       'exchangeRate walletBalance';
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-columns: 50% 50%;
     padding: 38px;
     padding-top: 40px;
@@ -31,6 +33,15 @@
 
 .walletSearch {
   grid-area: walletSearch;
+  padding: 14px 0;
+
+  @include media-breakpoint-up(sm) {
+    padding: 18px 0;
+  }
+}
+
+.walletAddress {
+  grid-area: walletAddress;
   padding: 14px 0;
 
   @include media-breakpoint-up(sm) {

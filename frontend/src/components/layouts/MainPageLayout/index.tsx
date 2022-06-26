@@ -6,7 +6,9 @@ interface IProps {
 }
 const MainPageLayout:FC<IProps> = ({ children }) => (
   <div className={styles.mainPageLayout}>
-    {children}
+    <div className={styles.walletSearch}>
+      {children}
+    </div>
   </div>
 );
 
