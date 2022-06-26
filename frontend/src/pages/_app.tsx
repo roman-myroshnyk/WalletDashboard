@@ -35,7 +35,7 @@ const MyApp = ({ Component, pageProps }:AppProps) => (
         sizes="32x32"
       />
       <link rel="apple-touch-icon" href="/apple-icon.png" />
-      <meta name="theme-color" content="#317EFB" />
+      <meta name="theme-color" content="#111" />
     </Head>
     <Header>
       <Title>
