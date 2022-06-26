@@ -21,19 +21,11 @@ const Snackbars = () => {
                 dashboardActions.removeSnackbar({ key: snackbar.key }),
               )}
               message={snackbar.message}
-              snackbarKey={snackbar.key}
               key={snackbar.key}
             />
           ))}
         </AnimatePresence>
       </ul>
-      <button
-        className={styles.addButton}
-        type="button"
-        onClick={() => dispatch(dashboardActions.addSnackbar({ message: 'wallet id is invalid laala' }))}
-      >
-        +
-      </button>
     </div>
   );
 };
