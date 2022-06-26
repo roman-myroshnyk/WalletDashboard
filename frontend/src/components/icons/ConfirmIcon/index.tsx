@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { getToggleAnimations } from '@/animations/ToggleAnimations';
 
 export interface IProps {
+  label?: string;
   height?: number;
   width?: number;
   enterDelay?: number;
@@ -10,13 +11,14 @@ export interface IProps {
  }
 
 const ConfirmIcon:FC<IProps> = ({
-  height, width, enterDelay, exitDelay,
+  label, height, width, enterDelay, exitDelay,
 }) => {
   const variants = getToggleAnimations(enterDelay, exitDelay);
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-6 w-6"
+      aria-label={label}
       fill="none"
       width={width}
       height={height}
@@ -40,6 +42,7 @@ const ConfirmIcon:FC<IProps> = ({
 };
 
 ConfirmIcon.defaultProps = {
+  label: 'confirmIcon',
   height: 24,
   width: 24,
   enterDelay: 0,
