@@ -4,22 +4,18 @@ import * as colors from '@/styles/colors';
 export const animations = {
   default: {
     background: colors.BLUE,
-    color: colors.WHITE,
     scale: 1,
   },
   hover: {
     background: colors.BLUE,
-    color: colors.WHITE,
     scale: 1.06,
   },
   pressed: {
     background: colors.DARK_BLUE,
-    color: colors.WHITE,
     scale: 0.95,
   },
   disabled: {
     background: colors.LIGHT_BLACK,
-    color: colors.DARK_WHITE,
     scale: 1,
   },
 
