@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
 import '@/styles/globals.scss';
-
+import Snackbars from '@/molecules/Snackbars';
 import store from '@/app/store';
 
 const MyApp = ({ Component, pageProps }:AppProps) => (
@@ -34,6 +34,7 @@ const MyApp = ({ Component, pageProps }:AppProps) => (
       <meta name="theme-color" content="#317EFB" />
     </Head>
     <Component {...pageProps} />
+    <Snackbars />
   </Provider>
 );
 

@@ -1,24 +1,28 @@
 import { NextPage, GetServerSideProps } from 'next';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
-
-import Head from 'next/head';
-import WalletPageLayout from '@/layouts/WalletPageLayout';
-import WalletSearch from '@/organisms/WalletSearch';
-import Warning from '@/molecules/Warning';
-import ExchangeRate from '@/organisms/ExchangeRate';
-import WalletBalance from '@/organisms/WalletBalance';
+// app
 import { useAppSelector, useAppDispatch } from '@/app/store';
-import {
-  selectWallet,
-  walletActions,
-} from '@/app/walletSlice';
-import { validateChecksum, isValidAddress } from '@/api/etherscan/utils';
 import {
   selectExchangeRate,
   exchangeRateActions,
 } from '@/app/exchangeRateSlice';
-
+import {
+  selectWallet,
+  walletActions,
+} from '@/app/walletSlice';
+// components
+import Head from 'next/head';
+import Warning from '@/molecules/Warning';
+import WalletSearch from '@/organisms/WalletSearch';
+import ExchangeRate from '@/organisms/ExchangeRate';
+import WalletBalance from '@/organisms/WalletBalance';
+// layouts
+import WalletPageLayout from '@/layouts/WalletPageLayout';
+// utils
+import generateHash from 'random-hash';
+import { validateChecksum, isValidAddress } from '@/api/etherscan/utils';
+// styles
 import styles from '@/styles/Page.module.scss';
 
 // eslint-disable-next-line @typescript-eslint/require-await
@@ -28,14 +32,22 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
     isValidAddress(walletAddress as string);
     const checksumAddress = validateChecksum(walletAddress as string);
     if (checksumAddress !== walletAddress) {
-      context.res.setHeader('location', `/wallet/${checksumAddress}`);
-      context.res.statusCode = 302;
-      context.res.end();
+      return {
+        redirect: {
+          permanent: false,
+          destination: `/wallet/${checksumAddress}`,
+        },
+      };
     }
   } catch (e) {
-    context.res.setHeader('location', '/');
-    context.res.statusCode = 302;
-    context.res.end();
+    return {
+      redirect: {
+        permanent: false,
+        // eslint-disable-next-line max-len
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-call
+        destination: `/?error=Wallet address does not exist&errorHash=${generateHash({ length: 4 })}`,
+      },
+    };
   }
   return {
     props: {},

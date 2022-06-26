@@ -4,6 +4,7 @@ import * as colors from '@/styles/colors';
 import styles from './IconButton.module.scss';
 
 export interface IProps {
+  hasInitialAnimation?: boolean;
   isShown: boolean;
   disabled: boolean;
   label: string;
@@ -34,10 +35,10 @@ const variants = {
 };
 
 const IconButton:FC<IProps> = ({
-  isShown, disabled, label, onClick, children,
+  hasInitialAnimation, isShown, disabled, label, onClick, children,
 }) => (
   <div>
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence initial={hasInitialAnimation} exitBeforeEnter>
       {isShown && (
       <motion.button
         area-label={label}
@@ -54,5 +55,9 @@ const IconButton:FC<IProps> = ({
     </AnimatePresence>
   </div>
 );
+
+IconButton.defaultProps = {
+  hasInitialAnimation: false,
+};
 
 export default IconButton;
