@@ -28,6 +28,7 @@ const EditToggle:FC<IProps> = ({
         onClick={onEdit}
       >
         <EditIcon
+          label="edit"
           enterDelay={2}
           exitDelay={0}
         />
@@ -41,6 +42,7 @@ const EditToggle:FC<IProps> = ({
         onClick={onConfirm}
       >
         <ConfirmIcon
+          label="confirm"
           enterDelay={2}
           exitDelay={0}
         />
@@ -52,6 +54,7 @@ const EditToggle:FC<IProps> = ({
         onClick={onCancel}
       >
         <CancelIcon
+          label="cancel"
           enterDelay={1}
           exitDelay={1}
         />

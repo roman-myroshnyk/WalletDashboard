@@ -2,11 +2,12 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 
 export interface IProps {
-    height?: number;
-    width?: number;
+  label?:string;
+  height?: number;
+  width?: number;
 }
 
-const LoadingIcon:FC<IProps> = ({ width, height }) => (
+const LoadingIcon:FC<IProps> = ({ label, width, height }) => (
   <motion.div
     style={{
       width,
@@ -26,6 +27,7 @@ const LoadingIcon:FC<IProps> = ({ width, height }) => (
       height={height}
       xmlns="http://www.w3.org/2000/svg"
       className="h-5 w-5"
+      aria-label={label}
       viewBox="0 0 20 20"
       fill="currentColor"
     >
@@ -40,6 +42,7 @@ const LoadingIcon:FC<IProps> = ({ width, height }) => (
 );
 
 LoadingIcon.defaultProps = {
+  label: 'loadingIcon',
   height: 20,
   width: 20,
 };

@@ -2,11 +2,12 @@ import { FC } from 'react';
 import { motion } from 'framer-motion';
 
 export interface IProps {
+  label?:string;
   height?: number;
   width?: number;
 }
 
-const WarningIcon:FC<IProps> = ({ width, height }) => (
+const WarningIcon:FC<IProps> = ({ label, width, height }) => (
   <motion.div
     style={{
       display: 'block',
@@ -28,6 +29,7 @@ const WarningIcon:FC<IProps> = ({ width, height }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-5 w-5"
+      aria-label={label}
       viewBox="0 0 20 20"
       fill="currentColor"
       width={width}
@@ -44,6 +46,7 @@ const WarningIcon:FC<IProps> = ({ width, height }) => (
 );
 
 WarningIcon.defaultProps = {
+  label: 'warningIcon',
   height: 24,
   width: 24,
 };
