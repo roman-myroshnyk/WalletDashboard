@@ -13,6 +13,7 @@ import {
 } from '@/app/walletSlice';
 // components
 import Head from 'next/head';
+import Title from '@/atoms/Title';
 import Warning from '@/molecules/Warning';
 import WalletSearch from '@/organisms/WalletSearch';
 import ExchangeRate from '@/organisms/ExchangeRate';
@@ -30,6 +31,7 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
   try {
     const { walletAddress } = context.query;
     isValidAddress(walletAddress as string);
+
     const checksumAddress = validateChecksum(walletAddress as string);
     if (checksumAddress !== walletAddress) {
       return {
@@ -57,18 +59,20 @@ export const getServerSideProps:GetServerSideProps = async (context) => {
 const WalletPage:NextPage = () => {
   const router = useRouter();
   const { walletAddress } = router.query;
+
   const dispatch = useAppDispatch();
   const { selectedCurrency } = useAppSelector(selectExchangeRate);
+
   useEffect(() => {
     dispatch(walletActions.initWallet(walletAddress as string, selectedCurrency.label));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch, selectedCurrency.label, walletAddress]);
+
   useEffect(() => {
     dispatch(exchangeRateActions.initExchangeRate());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   const wallet = useAppSelector(selectWallet);
+
   return (
     <div className={styles.page}>
       <Head>
@@ -76,10 +80,10 @@ const WalletPage:NextPage = () => {
         <meta name="description" content="Digital Wallet Dashboard for Securitize" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main className={styles.main}>
         <WalletPageLayout>
           <WalletSearch />
+          <Title>{walletAddress}</Title>
           <Warning show={wallet.isOld} message="Wallet is old!" />
           <ExchangeRate />
           <WalletBalance />
