@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms/Header renders Header 1`] = `
+<div>
+  <header
+    class="header"
+  >
+    I am header
+  </header>
+</div>
+`;

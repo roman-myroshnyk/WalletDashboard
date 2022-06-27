@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms/Label Label should render 1`] = `
+<div>
+  <label
+    class="inputLink"
+    for="myInput"
+  >
+    My label
+  </label>
+</div>
+`;

@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms/Input renders Input with porps.truncate 1`] = `
+<div>
+  <input
+    class="tag tagTruncate"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.id 1`] = `
+<div>
+  <input
+    class="tag false"
+    id="InputId"
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.inputType=number 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="number"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.keyboard=numeric 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="numeric"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.keyboard=search 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="search"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.numberMin 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="3"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.numberStep 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="3"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.placeholder 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="I am placeholder"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.textAlign 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: right;"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`atoms/Input renders Input with props.value 1`] = `
+<div>
+  <input
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+    value="I am value"
+  />
+</div>
+`;
+
+exports[`atoms/Input rendres Input with props.multiLine 1`] = `
+<div>
+  <textarea
+    class="tag false"
+    id=""
+    inputmode="text"
+    min="1"
+    placeholder="Type something…"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="text"
+  />
+</div>
+`;

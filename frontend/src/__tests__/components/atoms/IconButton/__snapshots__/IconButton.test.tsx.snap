@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms/IconButton renders IconButton hasInitialAnimation=false 1`] = `
+<div>
+  <div>
+    <button
+      area-label="Icon button"
+      class="iconButton"
+      variants="[object Object]"
+    >
+      <svg
+        animate="enter"
+        aria-label="confirmIcon"
+        class="h-6 w-6"
+        exit="exit"
+        fill="none"
+        height="24"
+        initial="exit"
+        stroke="currentColor"
+        stroke-width="2"
+        variants="[object Object]"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          variants="[object Object]"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`atoms/IconButton renders IconButton hasInitialAnimation=true 1`] = `
+<div>
+  <div>
+    <button
+      area-label="Icon button"
+      class="iconButton"
+      variants="[object Object]"
+    >
+      <svg
+        animate="enter"
+        aria-label="confirmIcon"
+        class="h-6 w-6"
+        exit="exit"
+        fill="none"
+        height="24"
+        initial="exit"
+        stroke="currentColor"
+        stroke-width="2"
+        variants="[object Object]"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          variants="[object Object]"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`atoms/IconButton renders IconButton in disabled state 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`atoms/IconButton renders IconButton in normal state 1`] = `
+<div>
+  <div>
+    <button
+      area-label="Icon button"
+      class="iconButton"
+      variants="[object Object]"
+    >
+      <svg
+        animate="enter"
+        aria-label="confirmIcon"
+        class="h-6 w-6"
+        exit="exit"
+        fill="none"
+        height="24"
+        initial="exit"
+        stroke="currentColor"
+        stroke-width="2"
+        variants="[object Object]"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          variants="[object Object]"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`atoms/IconButton renders IconButton isShown=false 1`] = `
+<div>
+  <div>
+    <button
+      area-label="Icon button"
+      class="iconButton"
+      variants="[object Object]"
+    >
+      <svg
+        animate="enter"
+        aria-label="confirmIcon"
+        class="h-6 w-6"
+        exit="exit"
+        fill="none"
+        height="24"
+        initial="exit"
+        stroke="currentColor"
+        stroke-width="2"
+        variants="[object Object]"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          variants="[object Object]"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`atoms/IconButton renders IconButton isShown=true 1`] = `
+<div>
+  <div>
+    <button
+      area-label="Icon button"
+      class="iconButton"
+      variants="[object Object]"
+    >
+      <svg
+        animate="enter"
+        aria-label="confirmIcon"
+        class="h-6 w-6"
+        exit="exit"
+        fill="none"
+        height="24"
+        initial="exit"
+        stroke="currentColor"
+        stroke-width="2"
+        variants="[object Object]"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5 13l4 4L19 7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          variants="[object Object]"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
