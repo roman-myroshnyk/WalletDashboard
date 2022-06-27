@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`molecules/BalanceValue BalanceValue should render 1`] = `
+<div>
+  <strong
+    class="balanceValue"
+  >
+    <span>
+      14
+    </span>
+     €
+  </strong>
+</div>
+`;

@@ -4,6 +4,7 @@ exports[`atoms/Input renders Input with porps.truncate 1`] = `
 <div>
   <input
     class="tag tagTruncate"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"
@@ -21,6 +22,7 @@ exports[`atoms/Input renders Input with props.id 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id="InputId"
     inputmode="text"
     min="1"
@@ -38,6 +40,7 @@ exports[`atoms/Input renders Input with props.inputType=number 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"
@@ -55,6 +58,7 @@ exports[`atoms/Input renders Input with props.keyboard=numeric 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="numeric"
     min="1"
@@ -72,6 +76,7 @@ exports[`atoms/Input renders Input with props.keyboard=search 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="search"
     min="1"
@@ -89,6 +94,7 @@ exports[`atoms/Input renders Input with props.numberMin 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="3"
@@ -106,6 +112,7 @@ exports[`atoms/Input renders Input with props.numberStep 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"
@@ -123,6 +130,7 @@ exports[`atoms/Input renders Input with props.placeholder 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"
@@ -140,6 +148,7 @@ exports[`atoms/Input renders Input with props.textAlign 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"
@@ -157,6 +166,7 @@ exports[`atoms/Input renders Input with props.value 1`] = `
 <div>
   <input
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"
@@ -174,6 +184,7 @@ exports[`atoms/Input rendres Input with props.multiLine 1`] = `
 <div>
   <textarea
     class="tag false"
+    data-testid="input"
     id=""
     inputmode="text"
     min="1"

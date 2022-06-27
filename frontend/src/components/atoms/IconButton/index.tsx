@@ -9,6 +9,7 @@ export interface IProps {
   disabled: boolean;
   label: string;
   onClick: () => void;
+  testid?:string;
   children:ReactNode;
 }
 
@@ -35,7 +36,7 @@ const variants = {
 };
 
 const IconButton:FC<IProps> = ({
-  hasInitialAnimation, isShown, disabled, label, onClick, children,
+  hasInitialAnimation, isShown, disabled, label, onClick, testid, children,
 }) => (
   <div>
     <AnimatePresence initial={hasInitialAnimation} exitBeforeEnter>
@@ -48,6 +49,7 @@ const IconButton:FC<IProps> = ({
         whileHover={disabled ? 'whileHoverDisabled' : 'whileHover'}
         whileTap={disabled ? 'whileTapDisabled' : 'whileTap'}
         variants={variants}
+        data-testid={testid}
       >
         {children}
       </motion.button>
@@ -58,6 +60,7 @@ const IconButton:FC<IProps> = ({
 
 IconButton.defaultProps = {
   hasInitialAnimation: false,
+  testid: 'iconButton',
 };
 
 export default IconButton;
