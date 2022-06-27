@@ -30,6 +30,7 @@ export interface IProps {
     numberStep?:number;
     numberMin?: number;
     textAlign?: CSSProperties['textAlign'];
+    testid?: string;
 }
 
 const Input: FC<IProps> = ({
@@ -48,6 +49,7 @@ const Input: FC<IProps> = ({
   numberMin,
   numberStep,
   textAlign,
+  testid,
 }) => {
   const [inputValue, setValue] = useControlledState<string | number | readonly string[]>(value);
 
@@ -95,6 +97,7 @@ const Input: FC<IProps> = ({
       disabled={disabled}
       className={`${styles.tag} ${truncate && styles.tagTruncate}`}
       rows={1}
+      data-testid={testid}
     />
   );
 };
@@ -117,4 +120,5 @@ Input.defaultProps = {
   numberStep: 0.5,
   numberMin: 1,
   textAlign: 'left',
+  testid: 'input',
 };

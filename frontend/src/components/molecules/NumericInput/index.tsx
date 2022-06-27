@@ -7,6 +7,7 @@ export interface IProps {
   disabled:boolean;
   onSubmit: () => void;
   onChange: (value:string) => void;
+  testid?:string;
 }
 const NumericInput:FC<IProps> = ({
   value,
@@ -14,6 +15,7 @@ const NumericInput:FC<IProps> = ({
   disabled,
   onSubmit,
   onChange,
+  testid,
 }) => {
   const handleKeyDown = (e:KeyboardEvent) => {
     if (['e', 'E', '+', '-'].includes(e.key)) {
@@ -36,8 +38,13 @@ const NumericInput:FC<IProps> = ({
       numberStep={0.01}
       numberMin={0.01}
       textAlign="right"
+      testid={testid}
     />
   );
+};
+
+NumericInput.defaultProps = {
+  testid: 'numericInput',
 };
 
 export default NumericInput;
