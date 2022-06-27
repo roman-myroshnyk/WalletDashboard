@@ -44,6 +44,8 @@
   grid-area: walletAddress;
   padding: 14px 0;
 
+  word-break: break-word;
+
   @include media-breakpoint-up(sm) {
     padding: 18px 0;
   }
