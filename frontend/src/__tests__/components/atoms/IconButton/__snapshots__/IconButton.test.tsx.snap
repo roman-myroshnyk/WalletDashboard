@@ -6,6 +6,7 @@ exports[`atoms/IconButton renders IconButton hasInitialAnimation=false 1`] = `
     <button
       area-label="Icon button"
       class="iconButton"
+      data-testid="iconButton"
       variants="[object Object]"
     >
       <svg
@@ -41,6 +42,7 @@ exports[`atoms/IconButton renders IconButton hasInitialAnimation=true 1`] = `
     <button
       area-label="Icon button"
       class="iconButton"
+      data-testid="iconButton"
       variants="[object Object]"
     >
       <svg
@@ -82,6 +84,7 @@ exports[`atoms/IconButton renders IconButton in normal state 1`] = `
     <button
       area-label="Icon button"
       class="iconButton"
+      data-testid="iconButton"
       variants="[object Object]"
     >
       <svg
@@ -117,6 +120,7 @@ exports[`atoms/IconButton renders IconButton isShown=false 1`] = `
     <button
       area-label="Icon button"
       class="iconButton"
+      data-testid="iconButton"
       variants="[object Object]"
     >
       <svg
@@ -152,6 +156,7 @@ exports[`atoms/IconButton renders IconButton isShown=true 1`] = `
     <button
       area-label="Icon button"
       class="iconButton"
+      data-testid="iconButton"
       variants="[object Object]"
     >
       <svg

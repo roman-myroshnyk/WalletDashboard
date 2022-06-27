@@ -7,6 +7,7 @@ export interface IProps {
   disabled:boolean;
   onSubmit: () => void;
   onChange: (value:string) => void;
+  testid?:string;
 }
 
 const TextInput:FC<IProps> = ({
@@ -15,6 +16,7 @@ const TextInput:FC<IProps> = ({
   disabled,
   onSubmit,
   onChange,
+  testid,
 }) => (
   <Input
     value={value}
@@ -26,7 +28,12 @@ const TextInput:FC<IProps> = ({
     inputType="search"
     keyboard="search"
     truncate
+    testid={testid}
   />
 );
+
+TextInput.defaultProps = {
+  testid: 'text input',
+};
 
 export default TextInput;

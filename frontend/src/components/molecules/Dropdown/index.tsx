@@ -13,6 +13,8 @@ export interface IProps {
   value?: number;
   disabled?:boolean;
   onChange?: (index:number, label:string) => void;
+  selectTestid?: string;
+  optionTestid?: string;
 }
 
 const Dropdown: FC<IProps> = (props) => {
@@ -21,6 +23,8 @@ const Dropdown: FC<IProps> = (props) => {
     disabled,
     value,
     onChange,
+    selectTestid,
+    optionTestid,
   } = props;
 
   const [currentValue, setCurrentValue] = useState(value);
@@ -49,11 +53,13 @@ const Dropdown: FC<IProps> = (props) => {
       }}
       value={currentValue}
       onChange={handleSelectChange}
+      data-testid={selectTestid}
     >
       {options.map((option, index) => (
         <option
           key={`option-${index}`}
           value={index}
+          data-testid={optionTestid}
         >
           {option}
         </option>
@@ -67,6 +73,8 @@ Dropdown.defaultProps = {
   disabled: false,
   options: ['Option 1', 'Option 2'],
   onChange: undefined,
+  selectTestid: 'select',
+  optionTestid: 'option',
 };
 
 export default Dropdown;

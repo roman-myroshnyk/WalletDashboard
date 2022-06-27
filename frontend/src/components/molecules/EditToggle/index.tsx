@@ -26,6 +26,7 @@ const EditToggle:FC<IProps> = ({
         isShown={!isEditing}
         disabled={disabled}
         onClick={onEdit}
+        testid="editButton"
       >
         <EditIcon
           label="edit"
@@ -40,6 +41,8 @@ const EditToggle:FC<IProps> = ({
         isShown={isEditing}
         disabled={disabled}
         onClick={onConfirm}
+        testid="confirmButton"
+
       >
         <ConfirmIcon
           label="confirm"
@@ -52,6 +55,7 @@ const EditToggle:FC<IProps> = ({
         isShown={isEditing}
         disabled={disabled}
         onClick={onCancel}
+        testid="cancelButton"
       >
         <CancelIcon
           label="cancel"

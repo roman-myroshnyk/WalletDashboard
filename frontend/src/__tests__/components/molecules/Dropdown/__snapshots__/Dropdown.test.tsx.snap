@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`molecules/Dropdown Dropdown should render 1`] = `
+<div>
+  <select
+    class="select"
+    data-testid="select"
+    style="background-image: url(/icons/shevron.svg);"
+  >
+    <option
+      data-testid="option"
+      value="0"
+    >
+      my option 1
+    </option>
+    <option
+      data-testid="option"
+      value="1"
+    >
+      my option 2
+    </option>
+  </select>
+</div>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`molecules/TextInput TextInput should render 1`] = `
+<div>
+  <input
+    class="tag tagTruncate"
+    data-testid="text input"
+    id=""
+    inputmode="search"
+    min="1"
+    placeholder="I am placeholder"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="search"
+    value="I am text input"
+  />
+</div>
+`;
+
+exports[`molecules/TextInput TextInput should render disabled state 1`] = `
+<div>
+  <input
+    class="tag tagTruncate"
+    data-testid="text input"
+    disabled=""
+    id=""
+    inputmode="search"
+    min="1"
+    placeholder="I am placeholder"
+    rows="1"
+    step="0.5"
+    style="text-align: left;"
+    type="search"
+    value="I am text input"
+  />
+</div>
+`;
