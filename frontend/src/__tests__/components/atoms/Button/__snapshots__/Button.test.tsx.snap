@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`atoms/Button renders Button in disabled state 1`] = `
+<div>
+  <button
+    class="button"
+    disabled=""
+    style="transform: none; background: rgb(0, 204, 255);"
+    type="button"
+  >
+    I am button
+  </button>
+</div>
+`;
+
+exports[`atoms/Button renders Button in normal state 1`] = `
+<div>
+  <button
+    class="button"
+    style="transform: none; background: rgb(0, 204, 255);"
+    type="button"
+  >
+    I am button
+  </button>
+</div>
+`;
