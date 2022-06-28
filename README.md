@@ -74,13 +74,16 @@ ETH以外の仮想通貨に拡張できるように構成しました。そし�
 - `0x4bdd56559304e8961faf4fe78defb14f806fdc15` (old - more than 1 year ago)
 - `0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae` (newer)
 
-- [x] works
+## Lighthouseの結果
+
+<img width="715" alt="Screen Shot 2022-06-27 at 13 35 59" src="https://user-images.githubusercontent.com/69153600/175860910-b3c1930f-048a-4b1a-9926-eacf8de4d637.png">
+
 
 現時点`2022年06月24日`までやりきれていない課題：
 
 - [ ] テスト
-- [ ] 詳細のエラーハンドリング
-- [ ] パフォーマンスチューニング
+- [x] 詳細のエラーハンドリング
+- [x] パフォーマンスチューニング
 
 上記は大変申し訳ありませんが、今週は時間が足りなくてもし宜しかったら`月曜日27日`までに完了させて頂きたく思います。
 
