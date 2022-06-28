@@ -12,7 +12,11 @@ export interface IPostBody {
     newRate: number;
 }
 
-export type IPostRequest = IRequest<'POST', null, IPostBody>;
+export interface IQuery {
+  [key: string]: string;
+}
+
+export type IPostRequest = IRequest<'POST', IQuery, IPostBody>;
 
 export type SuccessResponse = {
     status: 'OK',
@@ -41,7 +45,7 @@ export async function post(req:IPostRequest, res:IResponse) {
     res.status(200).json(successResponse);
   } catch (e) {
     const err = <Error>e;
-    const errorMessage = err.message ? err.message : undefined;
+    const errorMessage = err.message ? err.message : '';
 
     const failResponse: FailResponse = {
       status: 'FAILED TO UPDATE',

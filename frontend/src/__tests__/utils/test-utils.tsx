@@ -10,6 +10,7 @@ import searchWalletReducer from '@/app/searchWalletSlice';
 import dashboardReducer from '@/app/dashboardSlice';
 
 import type { AppState, AppStore } from '@/app/store';
+import { EnabledCurrencies } from '@/consts/currency';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
     preloadedState?: PreloadedState<AppState>;
@@ -18,10 +19,25 @@ interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
 
 function renderWithProvider(ui: JSX.Element, {
   preloadedState = {
-    wallet: undefined,
-    exchangeRate: undefined,
-    searchWallet: undefined,
-    dashboard: undefined,
+    wallet: {
+      balance: 0,
+      isOld: false,
+      walletAddress: '',
+    },
+    exchangeRate: {
+      rate: null,
+      rateToEdit: null,
+      isEditing: false,
+      selectedCurrency: { ...EnabledCurrencies[0], index: 0 },
+    },
+    searchWallet: {
+      walletAddress: '',
+    },
+    dashboard: {
+      disabled: false,
+      loading: false,
+      snackbars: [],
+    },
   },
   store = configureStore({
     reducer: {

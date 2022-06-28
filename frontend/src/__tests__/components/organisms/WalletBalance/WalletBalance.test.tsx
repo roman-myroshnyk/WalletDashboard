@@ -28,9 +28,10 @@ const preloadedState:AppState = {
     balance: 4354,
     isOld: false,
     walletAddress: '0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe',
-
   },
-  searchWallet: undefined,
+  searchWallet: {
+    walletAddress: '',
+  },
   exchangeRate: {
     rate: 2.66,
     rateToEdit: null,

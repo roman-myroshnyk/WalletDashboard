@@ -35,3 +35,5 @@ declare module 'etherscan-api' {
       init,
     };
 }
+
+declare module 'random-hash'

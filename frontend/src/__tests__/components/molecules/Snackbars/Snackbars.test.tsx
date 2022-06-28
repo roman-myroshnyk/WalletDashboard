@@ -3,14 +3,26 @@ import store, { AppState } from '@/app/store';
 import { act } from 'react-dom/test-utils';
 import Snackbars from '@/molecules/Snackbars';
 import { dashboardActions } from '@/app/dashboardSlice';
+import { EnabledCurrencies } from '@/consts/currency';
 import {
   render, fireEvent, screen, waitFor,
 } from '../../../utils/test-utils';
 
 const preloadedState:AppState = {
-  wallet: undefined,
-  searchWallet: undefined,
-  exchangeRate: undefined,
+  wallet: {
+    balance: 0,
+    isOld: false,
+    walletAddress: '',
+  },
+  searchWallet: {
+    walletAddress: '',
+  },
+  exchangeRate: {
+    rate: null,
+    rateToEdit: null,
+    isEditing: false,
+    selectedCurrency: { ...EnabledCurrencies[0], index: 0 },
+  },
   dashboard: {
     disabled: false,
     loading: false,
@@ -18,9 +30,20 @@ const preloadedState:AppState = {
   },
 };
 const preloadedState2:AppState = {
-  wallet: undefined,
-  searchWallet: undefined,
-  exchangeRate: undefined,
+  wallet: {
+    balance: 0,
+    isOld: false,
+    walletAddress: '',
+  },
+  searchWallet: {
+    walletAddress: '',
+  },
+  exchangeRate: {
+    rate: null,
+    rateToEdit: null,
+    isEditing: false,
+    selectedCurrency: { ...EnabledCurrencies[0], index: 0 },
+  },
   dashboard: {
     disabled: false,
     loading: false,

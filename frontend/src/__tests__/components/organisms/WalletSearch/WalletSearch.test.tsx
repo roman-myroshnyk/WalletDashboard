@@ -23,6 +23,8 @@ describe('organisms/WalletSearch', () => {
     render(<WalletSearch />);
     const textInput = screen.getByTestId('text input');
     const button = screen.getByTestId('button');
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     pushSpy.mockImplementationOnce(() => null);
     fireEvent.change(textInput, {
       target: {
@@ -36,6 +38,8 @@ describe('organisms/WalletSearch', () => {
     render(<WalletSearch />);
     const textInput = screen.getByTestId('text input');
     const button = screen.getByTestId('button');
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     pushSpy.mockImplementationOnce(() => null);
     fireEvent.change(textInput, {
       target: {

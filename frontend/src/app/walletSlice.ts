@@ -7,14 +7,14 @@ import { axiosGetWalletBalance, GetWalletBalanceParams } from '@/api/walletBalan
 import { CurrencyLables, DigitalCurrencyLabels } from '@/consts/currency';
 
 export interface WalletState {
-    balance?: number;
-    isOld?: boolean;
+    balance: number | null;
+    isOld: boolean;
     walletAddress: string;
 }
 
 const initialState: WalletState = {
   balance: 0,
-  isOld: null,
+  isOld: false,
   walletAddress: '',
 };
 

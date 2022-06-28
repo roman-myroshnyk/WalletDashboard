@@ -51,7 +51,10 @@ const Input: FC<IProps> = ({
   textAlign,
   testid,
 }) => {
-  const [inputValue, setValue] = useControlledState<string | number | readonly string[]>(value);
+  const [
+    inputValue,
+    setValue,
+  ] = useControlledState<string | number | readonly string[]>(value as string);
 
   const inputEle = useRef<HTMLInputElement | HTMLTextAreaElement>();
 

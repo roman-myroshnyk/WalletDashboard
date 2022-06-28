@@ -30,7 +30,7 @@ const Template:Story<IProps> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  value: null,
+  value: undefined,
   id: '',
   disabled: false,
 };
