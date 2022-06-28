@@ -5,54 +5,36 @@ on:
     branches: [ "development" ]
 
 jobs:
-  checkout:
-    name: checkout source code
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v3
 
-  setup:
-    name: setup node & yarn
-    needs: checkout
-    runs-on: ubuntu-latest
-    steps:
-    - name: setup node
+    - name: Checkout
+      uses: actions/checkout@v3
+    
+    - name: Setup node
       uses: actions/setup-node@v3
       with:
         node-version: 16
-    - name: setup yarn
+  
+    - name: Setup yarn 
       run: |
         npm install yarn -g
         yarn config set workspaces-experimental true
 
-  addCredentials:
-    name: add aws credentials
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-    - name: add AWS credentials
+    - name: Add AWS credentials 
       run: |
         aws configure set aws_access_key_id ${{ secrets.DEFAULT_AWS_ACCESS_KEY_ID }} --profile default
         aws configure set aws_secret_access_key ${{ secrets.DEFAULT_AWS_SECRET_ACCESS_KEY }} --profile default
-
-  installModules:
-    name: install stack & frontend modules
-    needs: addCredentials
-    runs-on: ubuntu-latest
-    steps:
-    - name: install stacks modules
+        
+    - name: Install stacks modules
       run: yarn
-    - name: install frontend modules
+    
+    - name: Install frontend modules
       run: |
         cd ./frontend
         yarn
         cd ../
 
-  build:
-    name: build & deploy on AWS
-    needs: installModules
-    runs-on: ubuntu-latest
-    steps:
-    - name: build & deploy
+    - name: Build and deploy 
       run: yarn deploy-dev
