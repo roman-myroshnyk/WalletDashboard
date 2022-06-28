@@ -23,9 +23,11 @@ const customJestConfig = {
     '^@/consts/(.*)$': '<rootDir>/src/consts/$1',
     '^@/styles/(.*)$': '<rootDir>/src/styles/$1'
   },
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.js'],
   modulePathIgnorePatterns: [
     "<rootDir>/src/__tests__/app",
-    "<rootDir>/src/__tests__/mocks"
+    "<rootDir>/src/__tests__/mocks",
+    "<rootDir>/src/__tests__/utils"
   ],
 }
 

@@ -5,13 +5,14 @@ import styles from './BalanceValue.module.scss';
 
 export interface IProps {
     value?: number;
-    currencySymbol?:CurrencySymbols
+    currencySymbol?:CurrencySymbols;
+    testid?: string;
 }
 
-const BalanceValue:FC<IProps> = ({ value, currencySymbol }) => {
+const BalanceValue:FC<IProps> = ({ value, currencySymbol, testid }) => {
   const { animatedValue } = useSpring({ animatedValue: value, config: config.molasses });
   return (
-    <strong className={styles.balanceValue}>
+    <strong className={styles.balanceValue} data-testid={testid}>
       <animated.span>
         {animatedValue.to((val) => (val.toFixed(2)))}
       </animated.span>
@@ -23,5 +24,6 @@ const BalanceValue:FC<IProps> = ({ value, currencySymbol }) => {
 BalanceValue.defaultProps = {
   value: 0,
   currencySymbol: CurrencySymbols.USD,
+  testid: 'balanceValue',
 };
 export default BalanceValue;

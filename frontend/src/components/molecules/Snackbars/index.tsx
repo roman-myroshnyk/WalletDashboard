@@ -13,7 +13,7 @@ const Snackbars = () => {
 
   return (
     <div className={styles.container}>
-      <ul className={styles.ul}>
+      <ul data-testid="snackbars container" className={styles.ul}>
         <AnimatePresence initial>
           {snackbars.map((snackbar) => (
             <Snackbar

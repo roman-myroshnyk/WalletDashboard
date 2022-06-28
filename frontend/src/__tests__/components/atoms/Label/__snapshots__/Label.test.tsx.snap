@@ -4,6 +4,7 @@ exports[`atoms/Label Label should render 1`] = `
 <div>
   <label
     class="inputLink"
+    data-testid="label"
     for="myInput"
   >
     My label

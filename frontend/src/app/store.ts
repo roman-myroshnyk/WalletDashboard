@@ -17,6 +17,7 @@ export function makeStore() {
 }
 
 const store = makeStore();
+export type AppStore = typeof store
 
 export type AppState = ReturnType<typeof store.getState>
 
