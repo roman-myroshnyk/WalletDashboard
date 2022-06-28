@@ -8,10 +8,11 @@ export interface IProps {
   width?: number;
   enterDelay?:number;
   exitDelay?:number;
+  testid?: string;
  }
 
 const CancelIcon:FC<IProps> = ({
-  label, height, width, enterDelay, exitDelay,
+  label, height, width, enterDelay, exitDelay, testid,
 }) => {
   const variants = getToggleAnimations(enterDelay, exitDelay);
   return (
@@ -29,6 +30,7 @@ const CancelIcon:FC<IProps> = ({
       animate="enter"
       exit="exit"
       variants={variants.svg}
+      data-testid={testid}
     >
       <motion.path
         variants={variants.path}
@@ -52,6 +54,7 @@ CancelIcon.defaultProps = {
   width: 24,
   enterDelay: 0,
   exitDelay: 0,
+  testid: 'cancelIcon',
 };
 
 export default CancelIcon;

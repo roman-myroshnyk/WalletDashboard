@@ -4,6 +4,7 @@ exports[`molecules/BalanceValue BalanceValue should render 1`] = `
 <div>
   <strong
     class="balanceValue"
+    data-testid="balanceValue"
   >
     <span>
       14

@@ -11,16 +11,19 @@ import styles from './Snackbar.module.scss';
 interface IProps {
     onClose: () => void;
     message: string;
+    testid?: string
 }
 
 const Snackbar:FC<IProps> = ({
   message,
   onClose,
+  testid,
 }) => (
   <motion.li
     className={styles.li}
     layout
     variants={animations}
+    data-testid={testid}
   >
     <span className={styles.warningIcon}>
       <WarningIcon />
@@ -43,4 +46,7 @@ const Snackbar:FC<IProps> = ({
   </motion.li>
 );
 
+Snackbar.defaultProps = {
+  testid: 'snackbar',
+};
 export default Snackbar;

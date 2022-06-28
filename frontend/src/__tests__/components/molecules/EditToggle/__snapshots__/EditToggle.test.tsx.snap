@@ -55,6 +55,7 @@ exports[`molecules/EditToggle EditToggle should render editing state 1`] = `
             animate="enter"
             aria-label="cancel"
             class="h-6 w-6"
+            data-testid="cancelIcon"
             exit="exit"
             fill="none"
             height="24"
