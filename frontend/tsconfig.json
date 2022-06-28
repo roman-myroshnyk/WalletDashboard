@@ -40,8 +40,8 @@
     "include": [
       "next-env.d.ts",
       "**/*.ts",
-      "**/*.tsx"
-, "lib/framer/Select.tsx", "lib/framer/default-utils/index.js"    ],
+      "**/*.tsx",
+    ],
     "exclude": [
       "node_modules"
     ]

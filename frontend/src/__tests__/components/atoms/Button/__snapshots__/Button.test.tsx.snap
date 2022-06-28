@@ -4,6 +4,7 @@ exports[`atoms/Button renders Button in disabled state 1`] = `
 <div>
   <button
     class="button"
+    data-testid="button"
     disabled=""
     style="transform: none; background: rgb(0, 204, 255);"
     type="button"
@@ -17,6 +18,7 @@ exports[`atoms/Button renders Button in normal state 1`] = `
 <div>
   <button
     class="button"
+    data-testid="button"
     style="transform: none; background: rgb(0, 204, 255);"
     type="button"
   >

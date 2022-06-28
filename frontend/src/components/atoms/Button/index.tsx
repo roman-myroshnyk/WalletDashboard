@@ -4,12 +4,15 @@ import { animations, transition } from '@/animations/ButtonAnimations';
 import styles from './Button.module.scss';
 
 export interface IProps {
-    text: string
-    disabled?: boolean
-    onClick?: MouseEventHandler<HTMLButtonElement>
+    text: string;
+    disabled?: boolean;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
+    testid?: string;
 }
 
-const Button:FC<IProps> = ({ text, disabled, onClick }) => (
+const Button:FC<IProps> = ({
+  text, disabled, testid, onClick,
+}) => (
   <motion.button
     className={styles.button}
     type="button"
@@ -23,6 +26,7 @@ const Button:FC<IProps> = ({ text, disabled, onClick }) => (
     {...(!disabled && {
       onClick,
     })}
+    data-testid={testid}
   >
     {text}
   </motion.button>
@@ -31,6 +35,7 @@ const Button:FC<IProps> = ({ text, disabled, onClick }) => (
 Button.defaultProps = {
   disabled: false,
   onClick: undefined,
+  testid: 'button',
 };
 
 export default Button;

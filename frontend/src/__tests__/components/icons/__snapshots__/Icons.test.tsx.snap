@@ -5,6 +5,7 @@ exports[`Icons renders CancelIcon 1`] = `
   <svg
     aria-label="cancelIcon"
     class="h-6 w-6"
+    data-testid="cancelIcon"
     fill="none"
     height="24"
     opacity="0"
