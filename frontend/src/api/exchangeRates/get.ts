@@ -16,7 +16,7 @@ export type IGetRequest = IRequest<'GET', IGetQuery, null>;
 
 export type SuccessResponse = {
     status: 'OK',
-    rate: number,
+    rate: number | null,
 }
 
 export type FailResponse = {
@@ -40,7 +40,7 @@ export async function get(req:IGetRequest, res:IResponse) {
     res.status(200).json(successResponse);
   } catch (e) {
     const err = <Error>e;
-    const errorMessage = err.message ? err.message : undefined;
+    const errorMessage = err.message ? err.message : '';
 
     const failResponse: FailResponse = {
       status: 'FAILED TO GET',

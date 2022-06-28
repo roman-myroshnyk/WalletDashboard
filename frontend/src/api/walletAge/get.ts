@@ -43,7 +43,7 @@ export async function get(req:IGetRequest, res:IResponse) {
     res.status(200).json(successResponse);
   } catch (e) {
     const error = <Error>e;
-    const errorMessage = error.message ? error.message : undefined;
+    const errorMessage = error.message ? error.message : '';
 
     const failResponse:FailResponse = {
       status: 'FAILED',

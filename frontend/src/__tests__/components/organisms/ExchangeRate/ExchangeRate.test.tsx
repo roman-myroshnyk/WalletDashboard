@@ -21,8 +21,14 @@ export const handlers = [
 ];
 
 const preloadedState:AppState = {
-  wallet: undefined,
-  searchWallet: undefined,
+  wallet: {
+    balance: 0,
+    isOld: false,
+    walletAddress: '',
+  },
+  searchWallet: {
+    walletAddress: '',
+  },
   exchangeRate: {
     rate: 2.66,
     rateToEdit: null,

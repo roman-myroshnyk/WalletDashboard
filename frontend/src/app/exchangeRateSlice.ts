@@ -12,8 +12,8 @@ interface SelectedCurrency extends CurrencyInfo {
   index: number
 }
 export interface ExchangeRateState {
-    rate?: number,
-    rateToEdit?:number,
+    rate: number | null,
+    rateToEdit:number | null,
     isEditing: boolean;
     selectedCurrency: SelectedCurrency,
 }
@@ -104,7 +104,7 @@ const updateExchangeRate = ():AppThunk => async (dispatch, getState) => {
   const { selectedCurrency, rate, rateToEdit } = selectExchangeRate(getState());
   const wallet = selectWallet(getState());
 
-  if (rate === rateToEdit) {
+  if (rate === rateToEdit || rateToEdit === null) {
     dispatch(exchangeRateSlice.actions.cancelEditingRate());
     return;
   }

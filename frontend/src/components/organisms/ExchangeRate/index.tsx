@@ -38,7 +38,7 @@ const ExchangeRate:FC = () => {
       </div>
       <div className={styles.secondLine}>
         <NumericInput
-          value={isEditing ? rateToEdit : rate}
+          value={isEditing ? rateToEdit || 0 : rate || 0}
           id="exchangeRateInput"
           disabled={!isEditing || loading || disabled}
           onChange={(value) => dispatch(

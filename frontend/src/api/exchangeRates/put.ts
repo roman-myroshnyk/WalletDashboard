@@ -11,8 +11,11 @@ export interface IPutBody {
     currency: CurrencyLables;
     newRate: number;
 }
+interface IQuery {
+  [key: string]: string;
+}
 
-export type IPutRequest = IRequest<'PUT', null, IPutBody>;
+export type IPutRequest = IRequest<'PUT', IQuery, IPutBody>;
 
 export type SuccessResponse = {
     status: 'OK',
@@ -40,7 +43,7 @@ export async function put(req:IPutRequest, res:IResponse) {
     res.status(200).json(successResponse);
   } catch (e) {
     const err = <Error>e;
-    const errorMessage = err.message ? err.message : undefined;
+    const errorMessage = err.message ? err.message : '';
 
     const failResponse:FailResponse = {
       status: 'FAILED TO CREATE',

@@ -20,9 +20,10 @@ export function isValidAddress(
 const FLOAT_POINT_FIX = 1000000000000000000;
 export function getBalance(
   digitalBalance:number,
-  rate:number,
+  rate:number | null,
 ) {
   const justifiedBalance = digitalBalance / FLOAT_POINT_FIX;
+  if (rate === null) return null;
   const balance = justifiedBalance * rate;
   return balance;
 }
