@@ -36,5 +36,23 @@ jobs:
         yarn
         cd ../
 
+    - name: Typecheck frontend
+      run: |
+        cd ./frontend
+        yarn typecheck
+        cd ../
+
+    - name: Lint typescript
+      run: |
+        cd ./frontend
+        yarn lint
+        cd ../
+
+    - name: Lint styles
+      run: |
+        cd ./frontend
+        yarn lint:style
+        cd ../
+
     - name: Build and deploy 
       run: yarn deploy-prod
