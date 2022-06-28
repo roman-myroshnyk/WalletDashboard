@@ -14,6 +14,7 @@ jobs:
 
   setup:
     name: setup node & yarn
+    needs: checkout
     runs-on: ubuntu-latest
     steps:
     - name: setup node
@@ -27,6 +28,7 @@ jobs:
 
   addCredentials:
     name: add aws credentials
+    needs: setup
     runs-on: ubuntu-latest
     steps:
     - name: add AWS credentials
@@ -36,6 +38,7 @@ jobs:
 
   installModules:
     name: install stack & frontend modules
+    needs: addCredentials
     runs-on: ubuntu-latest
     steps:
     - name: install stacks modules
@@ -48,6 +51,7 @@ jobs:
 
   build:
     name: build & deploy on AWS
+    needs: installModules
     runs-on: ubuntu-latest
     steps:
     - name: build & deploy
