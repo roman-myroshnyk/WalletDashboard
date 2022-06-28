@@ -5,7 +5,13 @@ import exchangeRateReducer from '@/app/exchangeRateSlice';
 import searchWalletReducer from '@/app/searchWalletSlice';
 import dashboardReducer from '@/app/dashboardSlice';
 
+import { enhancer as storybookEnhancer } from 'addon-redux';
+
 export function makeStore() {
+  const enhancers = [];
+  if (process.env.NODE_ENV !== 'production') {
+    enhancers.push(storybookEnhancer);
+  }
   return configureStore({
     reducer: {
       wallet: walletReducer,
@@ -13,6 +19,7 @@ export function makeStore() {
       searchWallet: searchWalletReducer,
       dashboard: dashboardReducer,
     },
+    enhancers,
   });
 }
 

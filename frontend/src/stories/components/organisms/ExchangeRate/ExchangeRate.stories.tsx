@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import ExchangeRate from '@/organisms/ExchangeRate';
-import { CurrencyLables } from '@/consts/currency';
+import { ARG_REDUX_PATH } from 'addon-redux';
 
 export default {
   title: 'organisms/ExchangeRate',
@@ -8,31 +8,23 @@ export default {
   argTypes: {
     exchangeRate: {
       controls: 'text',
+      [ARG_REDUX_PATH]: 'exchangeRate.rate',
     },
-    currencyLabel: {
-      control: 'radio',
-      options: CurrencyLables,
+    selectedCurrency: {
+      disable: true,
     },
     isEditing: {
       controls: 'boolean',
+      [ARG_REDUX_PATH]: 'exchangeRate.isEditing',
     },
     disabled: {
       controls: 'boolean',
+      [ARG_REDUX_PATH]: 'dashboard.disabled',
+
     },
     loading: {
       controls: 'boolean',
-    },
-    onRateInputChange: {
-      action: 'onRateInputChange: rate input changed',
-    },
-    onStartEditing: {
-      action: 'onStartEditing: edit button clicked',
-    },
-    onEditCancel: {
-      action: 'onEditCancel: cancel button clicked',
-    },
-    onEditConfirm: {
-      action: 'onEditConfirm: confirm button clicked',
+      [ARG_REDUX_PATH]: 'dashboard.loading',
     },
   },
 } as Meta;
@@ -44,8 +36,7 @@ const Template:Story = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  exchangeRate: '',
-  currencyLabel: CurrencyLables.USD,
+  exchangeRate: '12.3',
   isEditing: false,
   disabled: false,
   loading: false,

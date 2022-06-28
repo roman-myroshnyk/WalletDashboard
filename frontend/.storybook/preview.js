@@ -1,5 +1,6 @@
 import '../src/styles/globals.scss';
 import * as NextImage from "next/image";
+import store from '@/app/store'
 
 const OriginalNextImage = NextImage.default;
 
@@ -17,3 +18,4 @@ export const parameters = {
     },
   },
 }
+
