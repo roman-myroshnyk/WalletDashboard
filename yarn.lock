@@ -1322,11 +1322,6 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
-"@types/aws-lambda@^8.10.100":
-  version "8.10.100"
-  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.100.tgz#31442a71c09e0ef08e41b7342d62cf374fa268df"
-  integrity sha512-Qldp1LhbgQ4tEHewci0/q5qVRaDr8ylvsYfpitJ+FFixzAHpgitvM2NM449uYWt2tYo/iJy25aSRRUVvwIT+ng==
-
 "@types/chai-subset@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@types/chai-subset/-/chai-subset-1.3.3.tgz#97893814e92abd2c534de422cb377e0e0bdaac94"
@@ -1624,7 +1619,7 @@ aws-cdk@2.24.0:
   optionalDependencies:
     fsevents "2.3.2"
 
-aws-sdk@^2.1110.0, aws-sdk@^2.1157.0:
+aws-sdk@^2.1110.0:
   version "2.1157.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1157.0.tgz#d00b5ea932439de38e19435b48a6a2b38aa7c805"
   integrity sha512-30t+zhCECib8uaggd0Du8ifab4vtJjgVvNKxHWTpiLa3deTnM+0K7x3pwM99zxw0gLDxAUet/oURaoPJHwk/5Q==
@@ -3733,9 +3728,9 @@ jsonwebtoken@8.5.1:
     semver "^5.6.0"
 
 jszip@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/jszip/-/jszip-2.6.1.tgz#b88f3a7b2e67a2a048152982c7a3756d9c4828f0"
-  integrity sha512-C4Z++nYQv+CudUkCWUdz+yKVhQiFJjuWSmRJ5Sg3d3/OzcJ6U4ooUYlmE3+rJXrVk89KWQaiJ9mPp/VLQ4D66g==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-2.7.0.tgz#c420b1e1aa800490724a0dd277e8cca950bc2c41"
+  integrity sha512-JIsRKRVC3gTRo2vM4Wy9WBC3TRcfnIZU8k65Phi3izkvPH975FowRYtKGT6PxevA0XnJ/yO8b0QwV0ydVyQwfw==
   dependencies:
     pako "~1.0.2"
 
